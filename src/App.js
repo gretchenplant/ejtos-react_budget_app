@@ -4,13 +4,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 //Code to import Budget.js
 import Budget from './components/Budget';
-
 import RemainingBudget from './components/Remaining';
 import ExpenseTotal from './components/ExpenseTotal';
 import ExpenseItem from './components/ExpenseItem';
 import ExpenseList from './components/ExpenseList';
 import AllocationForm from './components/AllocationForm';
-import Currency from './components/CurrencyChange';
+import Currency from './components/Currency';
+import './components/ComponentCss.css';
 
 
 import { AppProvider } from './context/AppContext';
