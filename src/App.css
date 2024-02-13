@@ -24,6 +24,17 @@
   color: white;
 }
 
+.currencyBox {
+    display: none !important;
+background-color: lightpink;
+
+}
+.iconNext{
+    display:flex;
+    justify-content: center;
+}
+
+
 .App-link {
   color: #61dafb;
 }
