@@ -2,9 +2,9 @@ import React, { useContext, useState } from 'react';
 import { AppContext } from '../context/AppContext';
 
 const AllocationForm = (props) => {
-    const { dispatch,remaining  } = useContext(AppContext);
+    const { dispatch,remaining, currency  } = useContext(AppContext);
 
-    const [name, setName, Currency] = useState('');
+    const [name, setName] = useState('');
     const [cost, setCost] = useState('');
     const [action, setAction] = useState('');
 
@@ -72,7 +72,7 @@ const AllocationForm = (props) => {
                   <table>
                     <thead>
                          <tr>
-                         <th>{Currency}</th>
+                         <th>{currency}</th>
                          <th><input
                     
                     required='required'

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { AppContext } from '../context/AppContext';
 import './ComponentCss.css';
 
@@ -17,7 +17,7 @@ const Currency = () => {
         <option value="$">Dollar($)</option>
         <option value="£">Pound(£)</option>
         <option value="€">Euro(€)</option>
-        <option value="CAD">Ruppee(₹)</option>
+        <option value="₹">Ruppee(₹)</option>
       </select>	
       }	
     </div>

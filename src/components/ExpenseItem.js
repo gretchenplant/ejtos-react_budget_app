@@ -1,9 +1,15 @@
 import React, { useContext } from 'react';
 import { TiDelete } from 'react-icons/ti';
 import { AppContext } from '../context/AppContext';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCirclePlus } from '@fortawesome/free-solid-svg-icons';
+import { faCircleMinus } from '@fortawesome/free-solid-svg-icons';
+
+
+
 
 const ExpenseItem = (props) => {
-    const { dispatch, Currency } = useContext(AppContext);
+    const { dispatch, currency } = useContext(AppContext);
 
     const handleDeleteExpense = () => {
         dispatch({
@@ -17,19 +23,35 @@ const ExpenseItem = (props) => {
             name: name,
             cost: 10,
         };
+        
 
         dispatch({
             type: 'ADD_EXPENSE',
             payload: expense
         });
+        
 
     }
-
+    const decreaseAllocation = (name) => {
+        const expense = {
+            name: name,
+            cost: -10,
+        };
+        dispatch({
+            type: 'ADD_EXPENSE',
+            payload: expense
+        });
+    }
     return (
         <tr>
         <td>{props.name}</td>
-        <td>{Currency}{props.cost}</td>
-        <td><button onClick={event=> increaseAllocation(props.name)}>+</button></td>
+        <td>{currency}{props.cost}</td>
+        <td><button onClick={event=> increaseAllocation(props.name)}>
+        <FontAwesomeIcon icon={faCirclePlus} style={{color: "#63E6BE",}} />
+            </button></td>
+        <td><button onClick={event=> decreaseAllocation(props.name)}>
+        <FontAwesomeIcon icon={faCircleMinus} style={{color: "#e66565",}} />
+            </button></td>
         <td><TiDelete size='1.5em' onClick={handleDeleteExpense}></TiDelete></td>
         </tr>
     );
